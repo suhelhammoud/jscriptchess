@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% block script %}
+<script type="text/javascript" src="/javascript/lobby.js"></script>
+<script type="text/javascript" src="/javascript/chat.js"></script>
+{% endblock %}
+{% block header %}
+<div class="header">
+  <a href="/">الرئيسية</a>
+</div>
+{% endblock %}
+
+
+
+{% block logo %}
+<div class="logo">
+  <img src="images/logo.png" width="105px" height="111px"/>
+  <span id="lobbyStatus">ساحة اللعب<br/>طول بالك عم اتصل,    شيه...</span>
+</div>
+{% endblock %}
+
+{% block content %}
+<br/>
+<img class="busy" src="/images/spin32.gif"/>
+<div class="gameStuff">
+  <div class="playerTable">
+    <div class="playerTitle">اللعيبة</div>
+    <div class="playerList">
+    </div>
+  </div>
+
+  <div class="gameList">
+    <table class="gameTable zebra">
+      <tr class="gameTableHeader">
+        <th>اللعيب الاول</th>
+        <th>اللعيب التاني</th>
+        <th>الوقت</th>
+        <th>شو في مافي</th>
+      </tr>
+    </table>
+  </div>
+</div>
+<div class="offerGame">
+  <a class="btn" id="inviteFriend">تحدي شخص بذات نفسو</a>
+  &nbsp;
+  <a class="btn" id="offerNewGame">تحدي علني للجميع</a>
+</div>
+<div class="chat">
+</div>
+طق حنك: <input type="text" id="chatInput" style="width:75%">
+<a class="btn" id="sendLobbyChat">ارسال</a>
+
+<div id="offerBlitzGameDialog" class="dialogContent">
+  <div class="dialogTitle">تحدي بمباراة علنية</div>
+  <div class="dialogBody">
+    هيك رح تكون الدعوة مفتوحة لأي واحد يقبل اللعب.<br/><br/>
+    <form id="offerForm">
+      <div class="radioGroup">
+        <input type="radio" checked="checked" name="game_type" value="blitz-5" />لعبة سريعة كتير, خمس دقايق لكل اللعبة<br/>
+        <input type="radio" name="game_type" value="blitz-10"/>لعبة سريعة, عشر دقايق لكل اللعبة<br/>
+        <input type="radio" name="game_type" value="blitz-15"/> , مشان أحمد بس, 15 دقيقة<br/>
+        <input type="radio" name="game_type" value="chess"/>شطرنج بدون توقيت<br/>
+      </div>
+      <div class="checkboxGroup">
+        <input type="checkbox" name="public" checked="checked" value="true"/>السماح للمتطفلين بمراقبة اللعبة
+      </div>
+    </form>
+    <div  class="buttonBar">
+      <span>
+        <a class="btn" id="sendGameOffer">مين بيتحدى</a>
+        &nbsp;
+        <a class="btn" id="closeModal">إلغاء</a>
+      </span>
+    </div>
+  </div>
+</div>
+
+<div id="joinDialog" class="dialogContent">
+  <div class="dialogTitle">قبلت التحدي</div>
+  <div class="dialogBody">
+    عم يتحداك  <span id="inviter">صديقك</span>
+  </div>
+  <div  class="buttonBar">
+    <a class="btn" id="joinGame">قبلت الدعوة</a>
+    &nbsp;
+    <a class="btn" id="closeModal">رجاع على الساحة</a>
+  </div>
+</div>
+
+<div id="enterDialog" class="dialogContent">
+  <div class="dialogTitle">الدخول الى اللعبة</div>
+  <div class="dialogBody">
+    لسا عندك دق حامي ماخلص مع <span id="blitzOpponent">خصومك</span>.
+  </div>
+  <div  class="buttonBar">
+    <a class="btn" id="goGame">روح على اللعبة</a>
+    &nbsp;
+    <a class="btn" id="closeModal">رجاع على الساحة</a>
+  </div>
+</div>
+
+<div id="inviteFriendDialog" class="dialogContent">
+  <div class="dialogTitle">تحدى رفيقك</div>
+  <div class="dialogBody">
+    <form id="inviteForm">
+      <div class="error" style="display:none"></div>
+      <label>عنوان ايميلو:</label></br>
+      <input id="email" name="email" type="text" style="width:50%" />
+      <br/>
+      <br/>
+      <label>نوع اللعبة:</label><br/>
+      <div class="radioGroup">
+        <input type="radio" checked="checked" name="game_type" value="blitz-5" />سريعة كتير, خمس دقايق لكل الدق<br/>
+        <input type="radio" name="game_type" value="blitz-10"/>سريعة , عشر دقايق<br/>
+        <input type="radio" name="game_type" value="blitz-15"/> , مشان أحمد بس, 15 دقيقة<br/>
+        <input type="radio" name="game_type" value="chess"/>شطرنج, معك كل الوقت<br/>
+      </div>
+      <div class="checkboxGroup">
+        <input type="checkbox" name="public" checked="checked" value="true"/>اسمح للمتطفلين بمراقبة اللعبة
+      </div>
+    </form>
+    <div  class="buttonBar">
+      <span>
+        <a class="btn" id="sendInvite">ابعت طلب التحدي, كلفة التوصيل على حسابنا</a>
+        &nbsp;
+        <a class="btn" id="closeModal">مابدي</a>
+      </span>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block header %}
+<div class="header">
+  <a href="/">الرئيسية</a>
+</div>
+{% endblock %}
+
+{% block logo %}
+<div class="logo">
+  <img src="images/logo.png" width="105px" height="111px"/>
+  <span class="oneLine">تاريخ اللعبة</span>
+</div>
+{% endblock %}
+{% block content %}
+    شو في عندك بالماضي: {{record_string}}<br/>
+    {% if completed_games_list %}
+    <table class="zebra historyList">
+      <tr class="historyListHeader">
+        <th>الخصم</th>
+        <th>اللون</th>
+        <th>الحالة</th>
+        <th>التاريخ</th>
+        <th>&nbsp;</th>
+      </tr>
+      {% for gameObj in completed_games_list %}
+      <tr>
+        <td>{{gameObj.get_opposing_player}}</td>
+        <td>{{gameObj.get_color_as_string}}</td>
+        <td>{{gameObj.get_outcome_as_string}}</td>      
+        <td>{{gameObj.get_last_modified}}</td>
+        <td><a class="btn" id="goGame" ref="{{gameObj.key}}">مراجعة</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% else %}
+      <br/>
+      اي وين عم تبحبش بتاريخك و بالاساس ماخلصت ولا لعبة؟<br/><br/>
+      <a style="text-decoration: underline" href="/lobby">روح لهون</a> حتى تشوف الدقوق الحالية او تشترك بدقوق جديدة.
+    {% endif %}
+
+{% endblock %}

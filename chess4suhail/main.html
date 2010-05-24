@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block logo %}
+      <div class="logo">
+        <img src="images/logo.png" width="105px" height="111px"/>
+        <span>هلا و غلا والله !<br/></span>
+      </div>
+{% endblock %}
+{% block content %}
+      <div class="help">
+        <a id="whatIsBlitz">(شو هاد؟?)</a>
+      </div>
+      <div id="whatIsBlitzDialog" class="dialogContent">
+        <div class="dialogTitle">شو هاد؟?</div>
+        <div class="dialogBody">
+هدا ياحبيبنا برنامج لعبة شطرنج. كل لاعب عندو كم دقيقة ليحرك قطعو (يعني شي خمس او عشر دقايق لكل الدق).<br/>
+          <br/>
+لما بيجي دورك لتتحرك بتبلش الساعة تعدلك و تشوفك كم دقيقة بقي لك. بس تنقل القطعة بتوقف ساعتك و بتبلش ساعة حبيبك أب مريم تعد تنازليا. كل قواعد اللعبة العادية موجودة هون. فلا تحاول تتشاطر علينا و تفرض قواعد من عندك. بس فيه قاعدة زيادة وهي إذا خلص وقت ساعتك , فراحت عليك ياحبيب و خيرها بغيرها.<br/>
+          <br/>
+فيك تلعب لعبة سريعة عا الحارك و الوقت هون محسوب. أو فيك تلعب بدون توقيت, يعني بتنقل القطعة و بتغيب تشربلك كاسة متة و بترجع أيمت مابدك. أو بس يجي دورك من جديد رح نبعتلك ايميل انو أبو مريم حرك إحدى قطعاتو و هلق راح يشرب كاسة شاي.
+        </div>
+        <div  class="buttonBar">
+          <a class="btn" id="closeModal">OK</a>
+        </div>
+      </div>
+      <div class="menu top">
+        <a id="enterLobby">لعاب دق لنشوف</a>
+        <div class="subtext">
+          شوف مين عم يلعب هلق
+        </div>
+      </div>
+      <div class="menu">
+        <a id="viewHistory">انتصاراتك او خساراتك التاريخية</a>
+        <div class="subtext">
+          شوف شو لعبت من قبل
+        </div>
+      </div>
+      <!--
+      <div class="menu">
+        <a id="editProfile">Edit your profile</a>
+        <div class="subtext">
+هون بتعدل اسمك و صورتك و الاعدادات الافتراضية شيتك
+        </div>
+      </div>
+      -->
+{% endblock %}
+
